@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+
 import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/angular';
+import { DialogComponent } from './components/dialog/dialog.component';
 import { INITIAL_EVENTS, createEventId } from './event-utils';
 
 @Component({
@@ -7,6 +10,12 @@ import { INITIAL_EVENTS, createEventId } from './event-utils';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
+
+// export interface DialogData {
+//   animal: 'panda' | 'unicorn' | 'lion';
+// }
+
 export class AppComponent {
 
   calendarVisible = true;
@@ -34,6 +43,8 @@ export class AppComponent {
   };
   currentEvents: EventApi[] = [];
 
+  constructor(public dialog: MatDialog) {}
+
   handleCalendarToggle() {
     this.calendarVisible = !this.calendarVisible;
   }
@@ -44,26 +55,39 @@ export class AppComponent {
   }
 
   handleDateSelect(selectInfo: DateSelectArg) {
-    const title = prompt('Please enter a new title for your event');
-    const calendarApi = selectInfo.view.calendar;
+    // const title = prompt('Please enter a new title for your event');
+    // const calendarApi = selectInfo.view.calendar;
 
-    calendarApi.unselect(); // clear date selection
+    // calendarApi.unselect(); // clear date selection
 
-    if (title) {
-      calendarApi.addEvent({
-        id: createEventId(),
-        title,
-        start: selectInfo.startStr,
-        end: selectInfo.endStr,
-        allDay: selectInfo.allDay
-      });
-    }
+    // if (title) {
+    //   calendarApi.addEvent({
+    //     id: createEventId(),
+    //     title,
+    //     start: selectInfo.startStr,
+    //     end: selectInfo.endStr,
+    //     allDay: selectInfo.allDay
+    //   });
+    // }
+
+    this.dialog.open(DialogComponent, {
+      data: {
+        animal: 'panda'
+      }
+    });
   }
 
   handleEventClick(clickInfo: EventClickArg) {
-    if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
-      clickInfo.event.remove();
-    }
+    // if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
+    //   clickInfo.event.remove();
+    // }
+
+    this.dialog.open(DialogComponent, {
+      data: {
+        animal: 'panda'
+      }
+    });
+    
   }
 
   handleEvents(events: EventApi[]) {
