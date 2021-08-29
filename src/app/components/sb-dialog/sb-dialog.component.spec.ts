@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GridComponent } from './grid.component';
+import { SbDialogComponent } from './sb-dialog.component';
 
-describe('GridComponent', () => {
-  let component: GridComponent;
-  let fixture: ComponentFixture<GridComponent>;
+describe('DialogComponent', () => {
+  let component: SbDialogComponent;
+  let fixture: ComponentFixture<SbDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [GridComponent]
+      declarations: [ SbDialogComponent ]
     })
-      .compileComponents();
+    .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GridComponent);
+    fixture = TestBed.createComponent(SbDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

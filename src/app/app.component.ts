@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/angular';
-import { DialogComponent } from './components/dialog/dialog.component';
+import { SbDialogComponent } from './components/sb-dialog/sb-dialog.component';
 import { INITIAL_EVENTS, createEventId } from './event-utils';
 
 @Component({
@@ -70,7 +70,7 @@ export class AppComponent {
     //   });
     // }
 
-    this.dialog.open(DialogComponent, {
+    this.dialog.open(SbDialogComponent, {
       data: {
         animal: 'panda'
       }
@@ -82,7 +82,7 @@ export class AppComponent {
     //   clickInfo.event.remove();
     // }
 
-    this.dialog.open(DialogComponent, {
+    this.dialog.open(SbDialogComponent, {
       data: {
         animal: 'panda'
       }

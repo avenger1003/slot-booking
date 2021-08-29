@@ -7,10 +7,10 @@ import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DialogComponent } from './components/dialog/dialog.component';
+import { SbDialogComponent } from './components/sb-dialog/sb-dialog.component';
 // import { MatDialog } from '@angular/material/dialog';
 import {MatDialogModule} from '@angular/material/dialog';
-import { GridComponent } from './components/grid/grid.component';
+import { SbGridComponent } from './components/sb-grid/sb-grid.component';
 import { MaterialModule } from './material.module';
 import { MatRadioModule } from '@angular/material/radio';
 
@@ -24,8 +24,8 @@ FullCalendarModule.registerPlugins([
 @NgModule({
   declarations: [
     AppComponent,
-    DialogComponent,
-    GridComponent,
+    SbDialogComponent,
+    SbGridComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +36,7 @@ FullCalendarModule.registerPlugins([
     MatRadioModule
    ],
   providers: [],
-  entryComponents: [AppComponent, DialogComponent],
+  entryComponents: [AppComponent, SbDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

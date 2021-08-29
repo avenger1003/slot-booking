@@ -11,11 +11,11 @@ export interface DialogData {
  * @title Injecting data when opening a dialog
  */
 @Component({
-  selector: 'app-dialog',
-  templateUrl: './dialog.component.html',
-  styleUrls: ['./dialog.component.scss']
+  selector: 'app-sb-dialog',
+  templateUrl: './sb-dialog.component.html',
+  styleUrls: ['./sb-dialog.component.scss']
 })
-export class DialogComponent {
+export class SbDialogComponent {
     constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 }
 
