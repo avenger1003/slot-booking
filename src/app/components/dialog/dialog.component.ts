@@ -1,10 +1,12 @@
 
 
-import {Component, Inject} from '@angular/core';
+import {Component, Inject, Input} from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 export interface DialogData {
-  animal: 'panda' | 'unicorn' | 'lion';
+  title: String;
+  editAppointment: Boolean;
+  addAppointment: Boolean;
 }
 
 /**
@@ -16,8 +18,12 @@ export interface DialogData {
   styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent {
-    constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+  title: String = '';
+    constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    };
+    
 }
+
 
 // @Component({
 //   selector: 'dialog-data-example-dialog',

@@ -1,0 +1,68 @@
+<div>
+    <form [formGroup]="options">
+        <div class="row">
+        <h4>Doctor Name</h4>
+        <mat-form-field appearance="outline">
+            <mat-label>Doctor</mat-label>
+            <mat-select>
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+
+        <mat-button-toggle-group name="Gender" aria-label="Font Style" class="toggle-group">
+            <mat-button-toggle value="Male">Male</mat-button-toggle>
+            <mat-button-toggle value="female">female</mat-button-toggle>
+        </mat-button-toggle-group>
+
+        <mat-form-field class="sb-input sb-inline sb-phone-no" appearance="outline">
+            <mat-label>Please enter number</mat-label>
+            <input type="number" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="sb-input" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                placeholder="Ex. pat@example.com">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Department</mat-label>
+            <mat-select>
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Experiance</mat-label>
+            <mat-select>
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div class="ngx-timepicker-field-example example-width">
+            <label>In Time</label>
+            <ngx-timepicker-field [controlOnly]="true"></ngx-timepicker-field>
+        </div>
+        <br>
+
+        <div class="ngx-timepicker-field-example example-width">
+            <label>Out Time</label>
+            <ngx-timepicker-field [controlOnly]="true"></ngx-timepicker-field>
+        </div>
+
+
+    </form>
+
+
+</div>

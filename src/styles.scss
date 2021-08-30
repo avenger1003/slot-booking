@@ -9,3 +9,20 @@ body > * { /* the app-root */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-form-field {
+  width: 100%;
+}
+
+.sb-input {
+  width: 100%;
+}
+
+.sb-inline {
+  display: inline-flex;
+}
+
+.sb-phone-no {
+  width: 50%;
+  margin-left: 20px;
+}

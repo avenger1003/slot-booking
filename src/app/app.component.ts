@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/angular';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { INITIAL_EVENTS, createEventId } from './event-utils';
+import * as doc from '../stub/doc-1.json';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +13,9 @@ import { INITIAL_EVENTS, createEventId } from './event-utils';
 })
 
 
-// export interface DialogData {
-//   animal: 'panda' | 'unicorn' | 'lion';
-// }
-
 export class AppComponent {
 
+  
   calendarVisible = true;
   calendarOptions: CalendarOptions = {
     headerToolbar: {
@@ -27,6 +25,7 @@ export class AppComponent {
     },
     initialView: 'dayGridMonth',
     initialEvents: INITIAL_EVENTS, // alternatively, use the `events` setting to fetch from a feed
+    events: (doc as any).default,
     weekends: true,
     editable: true,
     selectable: true,
@@ -42,7 +41,7 @@ export class AppComponent {
     */
   };
   currentEvents: EventApi[] = [];
-
+  
   constructor(public dialog: MatDialog) {}
 
   handleCalendarToggle() {
@@ -71,10 +70,14 @@ export class AppComponent {
     // }
 
     this.dialog.open(DialogComponent, {
+      width: '600px',
       data: {
-        animal: 'panda'
+        title: 'Add Appointment',
+        addAppointment : true,
+        dateSelected : selectInfo.view.currentStart,
       }
     });
+    console.log(selectInfo.jsEvent);
   }
 
   handleEventClick(clickInfo: EventClickArg) {
@@ -84,7 +87,8 @@ export class AppComponent {
 
     this.dialog.open(DialogComponent, {
       data: {
-        animal: 'panda'
+        title: 'Edit Appointment',
+        editAppointment: true
       }
     });
     
