@@ -1,5 +1,5 @@
 
-# FullCalendar Angular Example Project
+# Slot Booking App
 
 This is a Slot booking bootstrap app built over Angular. It was initially set up with the `ng new` command of the [Angular CLI], but with lots of stuff stripped out including testing and linting.
 
