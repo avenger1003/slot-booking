@@ -1,6 +1,9 @@
 <h1 mat-dialog-title>{{data.title}}</h1>
-<div mat-dialog-content >
-<div *ngIf="data.addAppointment">
-  <app-sb-addition ></app-sb-addition>
+<div mat-dialog-content>
+  <div *ngIf="data.addAppointment">
+    <app-sb-addition (dialogSubmit)="dialogSubmit($event)"></app-sb-addition>
+  </div>
+  <div *ngIf="data.editAppointment">
+    <app-sb-edit [(selectedEvent)]="selectedEvent" (dialogSubmit)="dialogSubmit($event)" cdkFocusInitial></app-sb-edit>
   </div>
 </div>

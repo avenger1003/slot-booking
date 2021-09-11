@@ -15,6 +15,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { SbAdditionComponent } from './components/sb-addition/sb-addition.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { SbEditComponent } from './components/sb-edit/sb-edit.component';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -28,7 +29,8 @@ FullCalendarModule.registerPlugins([
     AppComponent,
     DialogComponent,
     GridComponent,
-    SbAdditionComponent
+    SbAdditionComponent,
+    SbEditComponent
   ],
   imports: [
     BrowserModule,

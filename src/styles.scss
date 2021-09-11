@@ -26,3 +26,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   width: 50%;
   margin-left: 20px;
 }
+
+.sb-submit-button-row {
+  display: flex;
+  margin-top: 20px;
+  left: 0px;
+}
+
+.sb-submit-button {
+  margin-right: 20px;
+}
+
+.cdk-overlay-container {
+  z-index: 700 !important;
+}

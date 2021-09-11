@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/angular';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { INITIAL_EVENTS, createEventId } from './event-utils';
 import * as doc from '../stub/doc-1.json';
+import { SbEditComponent } from './components/sb-edit/sb-edit.component';
 
 @Component({
   selector: 'app-root',
@@ -13,9 +14,9 @@ import * as doc from '../stub/doc-1.json';
 })
 
 
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
 
-  
+
   calendarVisible = true;
   calendarOptions: CalendarOptions = {
     headerToolbar: {
@@ -41,8 +42,15 @@ export class AppComponent {
     */
   };
   currentEvents: EventApi[] = [];
-  
-  constructor(public dialog: MatDialog) {}
+
+  constructor(public dialog: MatDialog) { }
+
+  @ViewChild(DialogComponent) child: DialogComponent;
+
+  ngAfterViewInit() {
+
+    console.log(this.child)
+  }
 
   handleCalendarToggle() {
     this.calendarVisible = !this.calendarVisible;
@@ -73,11 +81,10 @@ export class AppComponent {
       width: '600px',
       data: {
         title: 'Add Appointment',
-        addAppointment : true,
-        dateSelected : selectInfo.view.currentStart,
+        addAppointment: true,
+        dateSelected: selectInfo.view.currentStart,
       }
     });
-    console.log(selectInfo.jsEvent);
   }
 
   handleEventClick(clickInfo: EventClickArg) {
@@ -85,13 +92,16 @@ export class AppComponent {
     //   clickInfo.event.remove();
     // }
 
+    console.log(clickInfo.event)
     this.dialog.open(DialogComponent, {
+      width: '600px',
       data: {
         title: 'Edit Appointment',
-        editAppointment: true
+        editAppointment: true,
+        selectedEvent: clickInfo.event
       }
     });
-    
+
   }
 
   handleEvents(events: EventApi[]) {

@@ -1,5 +1,5 @@
 <div>
-    <form [formGroup]="sb_addtionForm" (ngSubmit)="onFormSubmit(sb_addtionForm.value)">
+    <form [formGroup]="sb_editForm" (ngSubmit)="onFormSubmit(sb_editForm.value)">
         <div class="row">
             <h4>Doctor Name</h4>
             <mat-form-field appearance="outline">
@@ -52,13 +52,13 @@
 
         <div class="ngx-timepicker-field-example example-width">
             <label>In Time</label>
-            <ngx-timepicker-field [controlOnly]="true" formControlName="inTime" id="inTime"></ngx-timepicker-field>
+            <ngx-timepicker-field formControlName="inTime" id="inTime"></ngx-timepicker-field>
         </div>
         <br>
 
         <div class="ngx-timepicker-field-example example-width">
             <label>Out Time</label>
-            <ngx-timepicker-field [controlOnly]="true" formControlName="outTime" id="outTime"></ngx-timepicker-field>
+            <ngx-timepicker-field [controlOnly]="true" formControlName="outTime" id="outTime" ></ngx-timepicker-field>
         </div>
 
         <mat-dialog-actions align="end">

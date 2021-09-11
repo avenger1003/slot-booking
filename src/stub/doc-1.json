@@ -1,17 +1,64 @@
 {
     "events": [ 
     {
-      "title"  : "event1",
-      "start"  :" 2021-08-20"
+      "title"  : "doctor 1",
+      "gender" : "Male",
+      "contactNo" : 9874563210,
+      "start"  : "2021-09-20T03:30:00",
+      "end"    : "2021-09-20T07:30:00",
+      "department" : "Neurology",
+      "experiance": "1+",
+      "email" : "test@email.com"
     },
     {
-      "title"  : "event2",
-      "start"  : "2021-08-20",
-      "end"    : "2021-08-20"
+      "title"  : "doctor 2",
+      "gender" : "Female",
+      "contactNo" : 9632587410,
+      "start"  : "2021-09-20T03:30:00",
+      "end"    : "2021-09-21T07:30:00",
+      "department" : "Dermatology",
+      "experiance" : "2+",
+      "email" : "test@email.com"
     },
     {
-      "title"  : "event3",
-      "start"  : "2021-08-20T12:30:00"
+      "title"  : "doctor 3",
+      "gender" : "Male",
+      "contactNo" : 7896321045,
+      "start"  : "2021-09-15T03:30:00",
+      "end"    : "2021-09-16T07:30:00",
+      "department" : "Genaral medicine",
+      "experiance" : "3+",
+      "email" : "test@email.com"
+    },
+    {
+      "title"  : "doctor 4",
+      "gender" : "Female",
+      "contactNo" : 9874563201,
+      "start"  : "2021-08-10T03:30:00",
+      "end"    : "2021-08-10T07:30:00",
+      "department" : "Cardialogy",
+      "experiance" : "4+",
+      "email" : "test@email.com"
+    },
+    {
+      "title"  : "doctor 5",
+      "gender" : "Male",
+      "contactNo" : 9874563210,
+      "start"  : "2021-08-30T03:30:00",
+      "end"    : "2021-08-30T07:30:00",
+      "department" : "Orthopedics",
+      "experiance" : "5+",
+      "email" : "test@email.com"
+    },
+    {
+      "title"  : "doctor 6",
+      "gender" : "Female",
+      "contactNo" : 8523697410,
+      "start"  : "2021-08-05T03:30:00",
+      "end"    : "2021-08-05T07:30:00",
+      "department" : "Oncology",
+      "experiance" : "6+",
+      "email" : "test@email.com"
     }
   ],
   "borderColor": "black"  
