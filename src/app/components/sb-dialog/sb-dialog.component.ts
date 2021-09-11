@@ -1,10 +1,14 @@
 
 
-import {Component, Inject} from '@angular/core';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Component, Inject, Input, ViewChild } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { SbEditComponent } from '../sb-edit/sb-edit.component';
 
 export interface DialogData {
-  animal: 'panda' | 'unicorn' | 'lion';
+  title: String;
+  editAppointment: Boolean;
+  addAppointment: Boolean;
+  selectedEvent: any;
 }
 
 /**
@@ -16,8 +20,27 @@ export interface DialogData {
   styleUrls: ['./sb-dialog.component.scss']
 })
 export class SbDialogComponent {
-    constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+  title : String = '';
+  submit: boolean = false;
+  selectedEvent: any;
+
+  ngAfterViewInit() {
+  }
+
+  ngOnInit(): void {
+  }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData, private dialogRef: MatDialog) {
+    this.selectedEvent = data.selectedEvent;
+  };
+
+  dialogSubmit(submit: any) {
+    if (submit != undefined && submit.isFormValid) {
+      this.dialogRef.closeAll();
+    }
+  }
+
 }
+
 
 // @Component({
 //   selector: 'dialog-data-example-dialog',
