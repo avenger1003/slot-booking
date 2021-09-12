@@ -18,7 +18,7 @@
 
         <mat-form-field class="sb-input sb-inline sb-phone-no" appearance="outline">
             <mat-label>Please enter number</mat-label>
-            <input formControlName="contactNo" id="contactNo" type="number" matInput>
+            <input matInput formControlName="contactNo" id="contactNo" type="number">
         </mat-form-field>
 
         <mat-form-field class="sb-input" appearance="outline">
@@ -50,23 +50,41 @@
             </mat-select>
         </mat-form-field>
 
-        <div class="ngx-timepicker-field-example example-width">
+        <!-- <div class="ngx-timepicker-field-example example-width">
             <label>In Time</label>
             <ngx-timepicker-field formControlName="inTime" id="inTime"></ngx-timepicker-field>
+        </div> -->
+
+        <!-- <div class="default-time-example">
+            <input matInput  [ngxTimepicker]="defaultValue" [value]="'05:11 pm'"  readonly>
+            <ngx-material-timepicker #defaultValue></ngx-material-timepicker>
+        </div> -->
+
+        <mat-form-field class="sb-input sb-inline sb-time-pick" appearance="outline">
+            <mat-label>Please select start time</mat-label>
+            <input matInput [ngxTimepicker]="defaultValue" formControlName="inTime" id="inTime">
+            <ngx-material-timepicker #defaultValue></ngx-material-timepicker>
+        </mat-form-field>
+
+        <mat-form-field class="sb-input sb-inline sb-time-pick" appearance="outline">
+            <mat-label>Please select end time</mat-label>
+            <input matInput [ngxTimepicker]="defaultValue_1" formControlName="outTime" readonly>
+            <ngx-material-timepicker #defaultValue_1></ngx-material-timepicker>
+        </mat-form-field>
+
+        <div *ngIf="!viewMode">
+            <mat-dialog-actions align="end">
+                <button mat-raised-button color="primary">Submit</button>
+                <button mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Cancel</button>
+            </mat-dialog-actions>
         </div>
-        <br>
-
-        <div class="ngx-timepicker-field-example example-width">
-            <label>Out Time</label>
-            <ngx-timepicker-field [controlOnly]="true" formControlName="outTime" id="outTime" ></ngx-timepicker-field>
-        </div>
-
-        <mat-dialog-actions align="end">
-            <button mat-raised-button color="primary">Submit</button>
-            <button mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Cancel</button>
-        </mat-dialog-actions>
-
     </form>
+
+    <mat-dialog-actions align="end" *ngIf="viewMode">
+        <button mat-raised-button (click)="disable_enable(false)" color="primary">Edit</button>
+        <button mat-raised-button (click)="deleteSlot()" [mat-dialog-close]="true" color="primary">Delete</button>
+        <button mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Close</button>
+    </mat-dialog-actions>
 
 
 </div>
