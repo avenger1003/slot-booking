@@ -40,7 +40,7 @@ FullCalendarModule.registerPlugins([
     MaterialModule,
     MatRadioModule,
     ReactiveFormsModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule.setLocale('en-IN')
    ],
   providers: [],
   entryComponents: [AppComponent, SbDialogComponent],

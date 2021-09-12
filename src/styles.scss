@@ -40,3 +40,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .cdk-overlay-container {
   z-index: 700 !important;
 }
+
+.mat-select-disabled .mat-select-value {
+  color: rgb(0, 0, 0);
+}
+
+.mat-input-element:disabled, .mat-form-field-type-mat-native-select.mat-form-field-disabled .mat-form-field-infix::after {
+  color:  rgb(0, 0, 0);
+}
+
+.sb-time-pick {
+  width: 46%;
+  margin-right: 20px;
+}

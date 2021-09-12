@@ -50,7 +50,7 @@
             </mat-select>
         </mat-form-field>
 
-        <div class="ngx-timepicker-field-example example-width">
+        <!-- <div class="ngx-timepicker-field-example example-width">
             <label>In Time</label>
             <ngx-timepicker-field [controlOnly]="true" formControlName="inTime" id="inTime"></ngx-timepicker-field>
         </div>
@@ -59,7 +59,19 @@
         <div class="ngx-timepicker-field-example example-width">
             <label>Out Time</label>
             <ngx-timepicker-field [controlOnly]="true" formControlName="outTime" id="outTime"></ngx-timepicker-field>
-        </div>
+        </div> -->
+
+        <mat-form-field class="sb-input sb-inline sb-time-pick" appearance="outline">
+            <mat-label>Please select start time</mat-label>
+            <input matInput [ngxTimepicker]="defaultValue" formControlName="inTime" id="inTime">
+            <ngx-material-timepicker #defaultValue></ngx-material-timepicker>
+        </mat-form-field>
+
+        <mat-form-field class="sb-input sb-inline sb-time-pick" appearance="outline">
+            <mat-label>Please select end time</mat-label>
+            <input matInput [ngxTimepicker]="defaultValue_1" formControlName="outTime" readonly>
+            <ngx-material-timepicker #defaultValue_1></ngx-material-timepicker>
+        </mat-form-field>
 
         <mat-dialog-actions align="end">
             <button mat-raised-button color="primary">Submit</button>
